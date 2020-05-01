@@ -72,7 +72,7 @@
 			<h3 class="text-uppercase text-center ">Covid-19 updates live</h3>
 		</div>
 		<div class="table-responsive">
-			<table class="table-bordered table-striped text-center" id="tbval">
+			<table class="table table-bordered table-striped text-center" id="tbval">
 				<tr>
                     <th>sno</th>
 					<th>country</th>
@@ -419,12 +419,12 @@
         success:function(data){
             console.log(data);
             console.log(data.Countries);
-
+			var sno = 1;
             $.each(data.Countries, function(key,value){
                 //console.log(key+":"+value);
-                var sno=1;
+                
                $("#country-wise").append("<tr>"+
-               "<td>"+sno +"</td>"+
+               "<td>"+sno+"</td>"+
                "<td>"+value.Country+"</td>"+
                "<td>"+value.NewConfirmed+"</td>"+
                "<td>"+value.NewDeaths+"</td>"+
@@ -433,7 +433,7 @@
                "<td>"+value.TotalDeaths+"</td>"+
                "<td>"+value.TotalRecovered+"</td>"+
                "</tr>")
-               sno++;
+              sno++;
             });
 
         }
